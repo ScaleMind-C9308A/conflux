@@ -22,6 +22,9 @@ class CvF_Crawler:
         for link in track(links):
             html_text = self.__download_url(url=link)
             
+            if html_text is None:
+                continue
+            
             html_parser = self.__get_parser(html=html_text)
             
             meta_url = html_parser.find_all('meta')[-1].get('content')
@@ -36,7 +39,11 @@ class CvF_Crawler:
                 f.write(source.content)
         
     def __download_url(self, url: str):
-        return requests.get(url).text        
+        response = requests.get(url)
+        if response.status_code == 200:
+            return response.text
+        else:
+            return None 
 
     def __get_parser(self, html: str):
         return BeautifulSoup(html, 'html.parser')
