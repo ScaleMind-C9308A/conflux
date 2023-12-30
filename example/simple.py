@@ -1,5 +1,4 @@
 import os, sys
-sys.path.append("/".join(os.getcwd().split("/")[:-1]))
 
 from cvf_crawler import CvF_Crawler
 
