@@ -1,5 +1,8 @@
 CVF Crawler - Crawling all paper you want from CVF Access Repository
 
+# Updates
+- v0.0.1 (29th Dec 2024): CVPR, ICCV conference papers crawling all or by year or by conference
+
 # Installation
 First you need to clone the repo as currently ```cvf_crawler``` is not available on ```Pypi```
 ```
