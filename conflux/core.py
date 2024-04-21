@@ -25,6 +25,8 @@ class CVFCrawler:
             print(f"Cloning: {filename}")
             
             savepath = save_dir + f"/{filename}"
+            if os.path.exists(savepath):
+                continue
             
             source = requests.get(link)
             
