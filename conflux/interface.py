@@ -74,10 +74,6 @@ class CvF_Crawler_Interface(CVFCrawler):
         urls = [x.find_all('a', href=True)[0]['href'][1:] for x in html_parser.find_all("dd")]
         
         links = [self.main_url.format(x) for x in urls if 'pdf' in x]
-
-        print(links)
-
-        exit(0)
         
         sub_save_dir = save_dir + f"/{conf_name}"
         if not os.path.exists(sub_save_dir):
