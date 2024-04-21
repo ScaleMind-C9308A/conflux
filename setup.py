@@ -14,7 +14,7 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
 
 # This call to setup() does all the work
 setup(
-    name="cvf_crawler",
+    name="conflux",
     version="0.0.1",
     description="Demo library",
     long_description=long_description,
@@ -34,11 +34,11 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Operating System :: OS Independent"
     ],
-    packages=["cvf_crawler"],
+    packages=["conflux"],
     include_package_data=True,
     install_requires=[
         "beautifulsoup4==4.12.2",
         "requests==2.31.0",
-        "rich==13.7.0"
+        "alive-progress==3.1.5"
         ]
 )

@@ -3,9 +3,9 @@ from typing import List
 import requests
 
 from bs4 import BeautifulSoup
-from rich.progress import track
+from alive_progress import alive_it
 
-class CvF_Crawler:
+class CVFCrawler:
     def __init__(self) -> None:
         pass
 
@@ -19,31 +19,24 @@ class CvF_Crawler:
         if save_dir is None:
             raise ValueError("save_dir cannot be None")
     
-        for link in track(links):
-            html_text = self.__download_url(url=link)
+        for link in alive_it(links):
             
-            if html_text is None:
-                continue
-            
-            html_parser = self.__get_parser(html=html_text)
-            
-            meta_url = html_parser.find_all('meta')[-1].get('content')
-            
-            filename = meta_url.split("/")[-1]
+            filename = link.split("/")[-1]
+            print(f"Cloning: {filename}")
             
             savepath = save_dir + f"/{filename}"
             
-            source = requests.get(meta_url)
+            source = requests.get(link)
             
             with open(savepath, 'wb') as f:
                 f.write(source.content)
         
-    def __download_url(self, url: str):
+    def download_url(self, url: str):
         response = requests.get(url)
         if response.status_code == 200:
             return response.text
         else:
             return None 
 
-    def __get_parser(self, html: str):
+    def get_parser(self, html: str):
         return BeautifulSoup(html, 'html.parser')

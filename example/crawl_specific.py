@@ -1,6 +1,6 @@
 import os, sys
 
-from cvf_crawler import CvF_Crawler_Interface
+from conflux import CvF_Crawler_Interface
 
 
 if __name__ == "__main__":
@@ -10,5 +10,5 @@ if __name__ == "__main__":
     cvf_interface(
         save_dir=os.getcwd() + "/clone",
         conf='cvpr',
-        year="2023"
+        year=["2022", "2023"]
     )

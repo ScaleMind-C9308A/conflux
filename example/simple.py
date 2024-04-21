@@ -1,6 +1,6 @@
 import os, sys
 
-from cvf_crawler import CvF_Crawler
+from conflux import CvF_Crawler
 
 if __name__ == "__main__":
     
