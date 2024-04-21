@@ -1,10 +1,10 @@
-CVF Crawler - Crawling all paper you want from CVF Access Repository
+ConfluxPapers (conflux) - Crawling all paper you want
 
 # Updates
 - v0.0.1 (29th Dec 2024): CVPR, ICCV conference papers crawling all or by year or by conference
 
 # Installation
-First you need to clone the repo as currently ```cvf_crawler``` is not available on ```Pypi```
+First you need to clone the repo as currently ```conflux``` is not available on ```Pypi```
 ```
 git clone https://github.com/KhoiDOO/cvf_crawler.git
 cd /path/to/cvf_crawler/
